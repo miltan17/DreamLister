@@ -56,15 +56,39 @@
 		525518201FE8AC8C00B39769 /* DreamLister */ = {
 			isa = PBXGroup;
 			children = (
-				525518211FE8AC8C00B39769 /* AppDelegate.swift */,
-				525518231FE8AC8D00B39769 /* ViewController.swift */,
-				525518251FE8AC8D00B39769 /* Main.storyboard */,
-				5255182B1FE8AC8D00B39769 /* Assets.xcassets */,
-				5255182D1FE8AC8D00B39769 /* LaunchScreen.storyboard */,
-				525518301FE8AC8D00B39769 /* Info.plist */,
+				525518361FE8B30500B39769 /* Supporting Files */,
+				525518381FE8B31900B39769 /* View Controllers */,
+				525518371FE8B31300B39769 /* Views */,
 				525518281FE8AC8D00B39769 /* DreamLister.xcdatamodeld */,
 			);
 			path = DreamLister;
+			sourceTree = "<group>";
+		};
+		525518361FE8B30500B39769 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				525518211FE8AC8C00B39769 /* AppDelegate.swift */,
+				5255182B1FE8AC8D00B39769 /* Assets.xcassets */,
+				525518301FE8AC8D00B39769 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		525518371FE8B31300B39769 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				525518251FE8AC8D00B39769 /* Main.storyboard */,
+				5255182D1FE8AC8D00B39769 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		525518381FE8B31900B39769 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				525518231FE8AC8D00B39769 /* ViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

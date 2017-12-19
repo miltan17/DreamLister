@@ -37,7 +37,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="135" id="54F-jA-iTN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="135" id="54F-jA-iTN" customClass="ItemCell" customModule="DreamLister" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="135"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="54F-jA-iTN" id="OZ2-DR-qGO">
@@ -76,7 +76,7 @@
                                                                                 </label>
                                                                             </subviews>
                                                                         </stackView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="Someday I will bye this car .. Just wait ..." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJA-Yf-VA4">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="Someday I will bye this car .. Just wait ..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJA-Yf-VA4">
                                                                             <rect key="frame" x="0.0" y="59" width="219" height="59"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <nil key="textColor"/>
@@ -111,6 +111,12 @@
                                                 <constraint firstAttribute="trailing" secondItem="D2H-ss-RJY" secondAttribute="trailing" constant="8" id="zxe-OT-Pc0"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="details" destination="sJA-Yf-VA4" id="6H6-vd-uQJ"/>
+                                            <outlet property="price" destination="bAm-zk-Yo2" id="kt3-aS-UgR"/>
+                                            <outlet property="thumb" destination="Akb-cx-LFA" id="xPE-tW-R8x"/>
+                                            <outlet property="title" destination="xtN-8v-zKd" id="vNZ-3y-DXe"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -120,6 +126,10 @@
                     <navigationItem key="navigationItem" title="Dream List" id="W39-W6-d7w">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gt6-LW-5dV"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="segment" destination="Er7-MU-O0N" id="3ag-8U-hqV"/>
+                        <outlet property="tableView" destination="bww-Qi-EbZ" id="Six-OF-Hkh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

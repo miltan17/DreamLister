@@ -14,42 +14,57 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+//        generateTestData()
+        attemptfetch()
     }
     
     // MARK: - TableView Contents
     func numberOfSections(in tableView: UITableView) -> Int {
-//        if let sections = controller.sections{
-//            return sections.count
-//        }
+        if let sections = controller.sections{
+            return sections.count
+        }
         return 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if let sections = controller.sections{
-//            let sectionInfo = sections[section]
-//            return sectionInfo.numberOfObjects
-//        }
+        if let sections = controller.sections{
+            let sectionInfo = sections[section]
+            return sectionInfo.numberOfObjects
+        }
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        configureCell(cell: cell, indexpath: indexPath as NSIndexPath)
+        
+        return cell
+    }
+    
+    func configureCell(cell: ItemCell, indexpath: NSIndexPath){
+        let item = controller.object(at: indexpath as IndexPath)
+        cell.configureCell(item: item)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 135
     }
     
     // MARK: - Attempt Fetch
-    func attemptfetc() {
+    func attemptfetch() {
         let fetchReqest: NSFetchRequest<Item> = Item.fetchRequest()
         let dateSort = NSSortDescriptor(key: "created", ascending: false)
         fetchReqest.sortDescriptors = [dateSort]
         
         let controller = NSFetchedResultsController(fetchRequest: fetchReqest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        
+        self.controller = controller
         do{
             try controller.performFetch()
+            print("Data fetched")
         }catch{
-            let error = error as! NSError
+            let error = error as NSError
             print(error)
-            
         }
     }
     
@@ -78,7 +93,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         case .update:
             if let indexPath = indexPath{
                 let cell = tableView.cellForRow(at: indexPath) as! ItemCell
-                //update the cell data
+                configureCell(cell: cell, indexpath: indexPath as NSIndexPath)
             }
             break
         case .move:
@@ -91,6 +106,27 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             break
         }
     }
+    
+    func generateTestData(){
+        let item = Item(context: context)
+        item.title = "MacBook Pro"
+        item.price = 2000
+        item.details = "Ohhh, I cannot wait for the next release ... just love it."
+        
+        let item2 = Item(context: context)
+        item2.title = "Canon Camera"
+        item2.price = 1200
+        item2.details = "Why not click the beautiful nature. Wanna bye this really soon"
+        
+        let item3 = Item(context: context)
+        item3.title = "Tesla Series S"
+        item3.price = 12200
+        item3.details = "Need a ride in my own car. One day this will be my car."
+        
+        appDelegate.saveContext()
+    }
+    
+    
     
 }
 

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		525518221FE8AC8D00B39769 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525518211FE8AC8C00B39769 /* AppDelegate.swift */; };
-		525518241FE8AC8D00B39769 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525518231FE8AC8D00B39769 /* ViewController.swift */; };
+		525518241FE8AC8D00B39769 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525518231FE8AC8D00B39769 /* MainVC.swift */; };
 		525518271FE8AC8D00B39769 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525518251FE8AC8D00B39769 /* Main.storyboard */; };
 		5255182A1FE8AC8D00B39769 /* DreamLister.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 525518281FE8AC8D00B39769 /* DreamLister.xcdatamodeld */; };
 		5255182C1FE8AC8D00B39769 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5255182B1FE8AC8D00B39769 /* Assets.xcassets */; };
@@ -21,12 +21,14 @@
 		525518461FE8CBF900B39769 /* Store+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255183E1FE8CBF900B39769 /* Store+CoreDataProperties.swift */; };
 		525518471FE8CBF900B39769 /* ItemType+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255183F1FE8CBF900B39769 /* ItemType+CoreDataClass.swift */; };
 		525518481FE8CBF900B39769 /* ItemType+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525518401FE8CBF900B39769 /* ItemType+CoreDataProperties.swift */; };
+		5255184C1FE8E2CC00B39769 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5255184B1FE8E2CC00B39769 /* MaterialView.swift */; };
+		5255184E1FE8E50500B39769 /* tesla.png in Resources */ = {isa = PBXBuildFile; fileRef = 5255184D1FE8E50500B39769 /* tesla.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5255181E1FE8AC8C00B39769 /* DreamLister.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamLister.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		525518211FE8AC8C00B39769 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		525518231FE8AC8D00B39769 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		525518231FE8AC8D00B39769 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		525518261FE8AC8D00B39769 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		525518291FE8AC8D00B39769 /* DreamLister.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DreamLister.xcdatamodel; sourceTree = "<group>"; };
 		5255182B1FE8AC8D00B39769 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +42,8 @@
 		5255183E1FE8CBF900B39769 /* Store+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Store+CoreDataProperties.swift"; path = "Model/Store+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5255183F1FE8CBF900B39769 /* ItemType+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ItemType+CoreDataClass.swift"; path = "Model/ItemType+CoreDataClass.swift"; sourceTree = "<group>"; };
 		525518401FE8CBF900B39769 /* ItemType+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ItemType+CoreDataProperties.swift"; path = "Model/ItemType+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5255184B1FE8E2CC00B39769 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		5255184D1FE8E50500B39769 /* tesla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tesla.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +76,14 @@
 		525518201FE8AC8C00B39769 /* DreamLister */ = {
 			isa = PBXGroup;
 			children = (
-				5255184A1FE8CFE000B39769 /* Generated */,
 				525518491FE8CC0300B39769 /* Model */,
 				525518361FE8B30500B39769 /* Supporting Files */,
 				525518381FE8B31900B39769 /* View Controllers */,
 				525518371FE8B31300B39769 /* Views */,
+				525518251FE8AC8D00B39769 /* Main.storyboard */,
+				5255182D1FE8AC8D00B39769 /* LaunchScreen.storyboard */,
 				525518281FE8AC8D00B39769 /* DreamLister.xcdatamodeld */,
+				5255184D1FE8E50500B39769 /* tesla.png */,
 			);
 			path = DreamLister;
 			sourceTree = "<group>";
@@ -95,8 +101,7 @@
 		525518371FE8B31300B39769 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				525518251FE8AC8D00B39769 /* Main.storyboard */,
-				5255182D1FE8AC8D00B39769 /* LaunchScreen.storyboard */,
+				5255184B1FE8E2CC00B39769 /* MaterialView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -104,7 +109,7 @@
 		525518381FE8B31900B39769 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				525518231FE8AC8D00B39769 /* ViewController.swift */,
+				525518231FE8AC8D00B39769 /* MainVC.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 		525518491FE8CC0300B39769 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5255184A1FE8CFE000B39769 /* Generated */,
 				525518391FE8CBF900B39769 /* Image+CoreDataClass.swift */,
 				5255183B1FE8CBF900B39769 /* Item+CoreDataClass.swift */,
 				5255183D1FE8CBF900B39769 /* Store+CoreDataClass.swift */,
@@ -192,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5255182F1FE8AC8D00B39769 /* LaunchScreen.storyboard in Resources */,
+				5255184E1FE8E50500B39769 /* tesla.png in Resources */,
 				5255182C1FE8AC8D00B39769 /* Assets.xcassets in Resources */,
 				525518271FE8AC8D00B39769 /* Main.storyboard in Resources */,
 			);
@@ -207,7 +214,8 @@
 				525518441FE8CBF900B39769 /* Item+CoreDataProperties.swift in Sources */,
 				525518431FE8CBF900B39769 /* Item+CoreDataClass.swift in Sources */,
 				525518471FE8CBF900B39769 /* ItemType+CoreDataClass.swift in Sources */,
-				525518241FE8AC8D00B39769 /* ViewController.swift in Sources */,
+				5255184C1FE8E2CC00B39769 /* MaterialView.swift in Sources */,
+				525518241FE8AC8D00B39769 /* MainVC.swift in Sources */,
 				525518421FE8CBF900B39769 /* Image+CoreDataProperties.swift in Sources */,
 				525518461FE8CBF900B39769 /* Store+CoreDataProperties.swift in Sources */,
 				525518221FE8AC8D00B39769 /* AppDelegate.swift in Sources */,

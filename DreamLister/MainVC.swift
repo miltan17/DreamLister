@@ -100,7 +100,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         self.controller = controller
         do{
             try controller.performFetch()
-            print("Data fetched")
+            print(controller.fetchedObjects)
+            print("Fetched Object amount: \(controller.fetchedObjects?.count)")
         }catch{
             let error = error as NSError
             print(error)
@@ -121,7 +122,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         switch type {
         case .insert:
-            if let indexPath = indexPath{
+            if let indexPath = newIndexPath{
                 tableView.insertRows(at: [indexPath], with: .fade)
              }
             break
@@ -165,6 +166,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         appDelegate.saveContext()
     }
+    
 }
 
 

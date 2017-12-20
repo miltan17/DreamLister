@@ -255,6 +255,9 @@
                                         <state key="normal" title="Save Item">
                                             <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveItem:" destination="t50-YP-voD" eventType="touchUpInside" id="0xy-fk-SKu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

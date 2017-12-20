@@ -79,12 +79,12 @@
 			isa = PBXGroup;
 			children = (
 				525518491FE8CC0300B39769 /* Model */,
-				525518361FE8B30500B39769 /* Supporting Files */,
 				525518381FE8B31900B39769 /* View Controllers */,
 				525518371FE8B31300B39769 /* Views */,
 				525518251FE8AC8D00B39769 /* Main.storyboard */,
 				5255182D1FE8AC8D00B39769 /* LaunchScreen.storyboard */,
 				525518281FE8AC8D00B39769 /* DreamLister.xcdatamodeld */,
+				525518361FE8B30500B39769 /* Supporting Files */,
 			);
 			path = DreamLister;
 			sourceTree = "<group>";
@@ -388,6 +388,7 @@
 				525518351FE8AC8D00B39769 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -60,6 +60,14 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         }
     }
     
+    
+    //MARK: - Segment Change
+    
+    @IBAction func segmentChanged(_ sender: Any) {
+        attemptfetch()
+        tableView.reloadData()
+    }
+    
     // MARK: - Perform Segue Action
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "itemDetailsVC"{
@@ -75,9 +83,18 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     // MARK: - Attempt Fetch
     func attemptfetch() {
         let fetchReqest: NSFetchRequest<Item> = Item.fetchRequest()
-        let dateSort = NSSortDescriptor(key: "created", ascending: false)
-        fetchReqest.sortDescriptors = [dateSort]
         
+        let dateSort = NSSortDescriptor(key: "created", ascending: false)
+        let priceSort = NSSortDescriptor(key: "price", ascending: true)
+        let titleSort = NSSortDescriptor(key: "title", ascending: true)
+        
+        if segment.selectedSegmentIndex == 0 {
+            fetchReqest.sortDescriptors = [dateSort]
+        }else if segment.selectedSegmentIndex == 1 {
+            fetchReqest.sortDescriptors = [priceSort]
+        }else {
+            fetchReqest.sortDescriptors = [titleSort]
+        }
         let controller = NSFetchedResultsController(fetchRequest: fetchReqest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         controller.delegate = self
         self.controller = controller

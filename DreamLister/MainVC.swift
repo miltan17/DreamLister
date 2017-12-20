@@ -51,6 +51,27 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         return 135
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let objects = controller.fetchedObjects, objects.count > 0 {
+            
+            let item: Item = objects[indexPath.row]
+            performSegue(withIdentifier: "itemDetailsVC", sender: item)
+        }
+    }
+    
+    // MARK: - Perform Segue Action
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "itemDetailsVC"{
+            if let destination = segue.destination as? ItemDetailsVC {
+                if let item = sender as? Item {
+                    destination.itemToEdit = item
+                }
+            }
+        }
+    }
+    
+    
     // MARK: - Attempt Fetch
     func attemptfetch() {
         let fetchReqest: NSFetchRequest<Item> = Item.fetchRequest()
@@ -127,9 +148,6 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         appDelegate.saveContext()
     }
-    
-    
-    
 }
 
 
